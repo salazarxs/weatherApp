@@ -1,0 +1,132 @@
+.container-weather {
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-weather .current-weather {
+    width: 70vw;
+    height: 100vh;
+}
+
+.current-weather input {
+    width: 100%;
+    height: 5%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: var(--ligth-dark-blue);
+    margin-bottom: 5%;
+    font: var(--font);
+    color: var(--font-color);
+    padding-left: 1%
+}
+
+.current-weather input::placeholder {
+    color: var(--font-color);
+    padding-left: 1%;
+}
+
+.current-weather div {
+    color: var(--font-color);
+}
+
+.current-weather .today-weather {
+    height: 30%;
+}
+
+.current-weather .today-weather {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.current-weather .today-forecast,
+.current-weather .air-conditions {
+    background-color: var(--ligth-dark-blue);
+}
+
+.current-weather .today-weather .stats,
+.current-weather .today-weather .current-weather-img {
+    height: 100%;
+    min-height: 100%;
+}
+
+.current-weather .today-weather .stats {
+    width: 80%;
+    height: 100%;
+}
+
+.today-weather .stats div {
+    min-height: 50%;
+    height: 50%;
+    width: 100%;
+}
+
+.today-weather .stats .container-city {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.today-weather .stats .container-city h2 {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.today-weather .stats .container-city p {
+    color: var(--font-color-secondary);
+
+}
+
+.today-weather .stats .container-temp {
+    font-size: xx-large;
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+.current-weather .today-weather .current-weather-img {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.today-weather .current-weather-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.current-weather .today-forecast {
+    width: 100%;
+    height: 30%;
+    border-radius: 20px;
+}
+
+.current-weather .today-forecast .container-title-forecast {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+    color: var(--font-color-secondary);
+    font-family: var(--font);
+    font-size: x-small;
+    font-weight: bold;
+}
+
+.container-weather .last-week {
+    min-width: 30vw;
+    min-height: 80%;
+
+    width: 30vw;
+    height: 80%;
+    background-color: var(--ligth-dark-blue);
+}
