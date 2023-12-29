@@ -33,8 +33,11 @@ const Weather = () => {
     }, []);
     useEffect(() => {
         if (todayPerHourWeather != undefined) {
-            todayPerHourWeather.map((hour, i) => {
-                console.log(hour.temperature)
+            console.log(todayPerHourWeather)
+            todayPerHourWeather.map((currentHour, i) => {
+                if (i == 0) {
+                    console.log(currentHour[0][18][0].main.temp)
+                }
             })
         } else {
             console.log('undefined la wea')
@@ -78,40 +81,82 @@ const Weather = () => {
                     <div className="container-data-forecast">
                         {
                             todayPerHourWeather !== undefined
-                                ? todayPerHourWeather.map((hour, i) => {
+                                ? todayPerHourWeather.map((currentHour, i) => {
                                     if (i == 0) {
                                         return (
-                                            <CardTodayForecast key={i} temp={hour[0].temperature} time={'00:00 AM'} />
+                                            <CardTodayForecast
+                                                key={i}
+                                                temp={currentHour[0][0][0].main.temp}
+                                                time={'00:00 AM'}
+                                                weatherImg={hour[0]}
+                                            />
+
                                         );
                                     }
                                     if (i == 1) {
                                         return (
-                                            <CardTodayForecast key={i} temp={hour[6].temperature} time={'6:00 AM'} />
+                                            <CardTodayForecast
+                                                key={i}
+                                                temp={currentHour[0][6][0].main.temp}
+                                                time={'6:00 AM'}
+                                                weatherImg={hour[6]}
+                                            />
+
                                         );
                                     }
                                     if (i == 2) {
                                         return (
-                                            <CardTodayForecast key={i} temp={hour[9].temperature} time={'9:00 AM'} />
+                                            <CardTodayForecast
+                                                key={i}
+                                                temp={currentHour[0][9][0].main.temp}
+                                                time={'9:00 AM'}
+                                                weatherImg={hour[9]}
+                                            />
+
                                         );
                                     }
                                     if (i == 3) {
                                         return (
-                                            <CardTodayForecast key={i} temp={hour[12].temperature} time={'12:00 PM'} />
+                                            <CardTodayForecast
+                                                key={i}
+                                                temp={currentHour[0][3][0].main.temp}
+                                                time={'12:00 PM'}
+                                                weatherImg={hour[3]}
+                                            />
+
                                         );
                                     }
                                     if (i == 4) {
                                         return (
-                                            <CardTodayForecast key={i} temp={hour[15].temperature} time={'3:00 PM'} />
+                                            <CardTodayForecast
+                                                key={i}
+                                                temp={currentHour[0][15][0].main.temp}
+                                                time={'3:00 PM'}
+                                                weatherImg={hour[15]}
+                                            />
+
                                         );
                                     }
                                     if (i == 5) {
                                         return (
-                                            <CardTodayForecast key={i} temp={hour[18].temperature} time={'6:00 PM'} />
+                                            <CardTodayForecast
+                                                key={i}
+                                                temp={currentHour[0][18][0].main.temp}
+                                                time={'6:00 PM'}
+                                                weatherImg={hour[18]}
+                                            />
+
                                         );
                                     }
                                     if (i == 6) {
                                         return (
-                                            <CardTodayForecast key={i} temp={hour[21].temperature} time={'9:00 PM'} />
+                                            <CardTodayForecast
+                                                key={i}
+                                                temp={currentHour[0][21][0].main.temp}
+                                                time={'9:00 PM'}
+                                                weatherImg={hour[21]}
+                                            />
+
                                         );
                                     }
 

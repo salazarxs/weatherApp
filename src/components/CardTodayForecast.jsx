@@ -5,6 +5,9 @@ import '../styles/CardTodayForecast.css';
 
 // Images
 import sun from '../images/sun.png';
+import cloudy from '../images/cloudy.png';
+import rain from '../images/rain.png';
+import sunWhitClouds from '../images/sunWhitClouds.png';
 
 const CardTodayForecast = ({ time, weatherImg, temp }) => {
 
@@ -20,7 +23,8 @@ const CardTodayForecast = ({ time, weatherImg, temp }) => {
     return (
         <div className='container-card-today-forecast'>
             <p>{time ? time : '04:20'}</p>
-            <img src={weatherImg ? weatherImg : sun} alt="Image of current weather" />
+
+            <img src={weatherImg == 'Cloudy' ? cloudy : weatherImg == 'Sun' ? sun : weatherImg == 'Rain' ? rain : sunWhitClouds} alt="Image of current weather" />
             <h3>{temp ? `${temp}°C` : '0°C'}</h3>
         </div>
     );
