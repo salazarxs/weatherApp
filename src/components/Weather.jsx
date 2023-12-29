@@ -12,16 +12,35 @@ import rain from '../images/rain.png';
 import sun from '../images/sun.png';
 import sunWhitClouds from '../images/sunWhitClouds.png';
 import CardTodayForecast from './CardTodayForecast';
+import GetTodayForecast from '../helpers/getTodayForecast';
 
 const Weather = () => {
     const [todayWeather, setTodayWeather] = useState();
+    const [todayPerHourWeather, setTodayPerHourWeather] = useState();
 
     useEffect(() => {
         getCurrentPosition()
             .then(data => {
                 getCurrentWeather(setTodayWeather, data.latitude, data.longitude,)
             })
-    }, [])
+    }, []);
+
+
+    // Get today weather forecast
+    useEffect(() => {
+        GetTodayForecast(setTodayPerHourWeather);
+
+    }, []);
+    useEffect(() => {
+        if (todayPerHourWeather != undefined) {
+            todayPerHourWeather.map((hour, i) => {
+                console.log(hour.temperature)
+            })
+        } else {
+            console.log('undefined la wea')
+        }
+    }, [todayPerHourWeather])
+
     return (
         <div className='container-weather'>
             <Navbar />
@@ -57,7 +76,49 @@ const Weather = () => {
                         <p>TODAY'S FORECAST</p>
                     </div>
                     <div className="container-data-forecast">
-                        <CardTodayForecast />
+                        {
+                            todayPerHourWeather !== undefined
+                                ? todayPerHourWeather.map((hour, i) => {
+                                    if (i == 0) {
+                                        return (
+                                            <CardTodayForecast key={i} temp={hour[0].temperature} time={'00:00 AM'} />
+                                        );
+                                    }
+                                    if (i == 1) {
+                                        return (
+                                            <CardTodayForecast key={i} temp={hour[6].temperature} time={'6:00 AM'} />
+                                        );
+                                    }
+                                    if (i == 2) {
+                                        return (
+                                            <CardTodayForecast key={i} temp={hour[9].temperature} time={'9:00 AM'} />
+                                        );
+                                    }
+                                    if (i == 3) {
+                                        return (
+                                            <CardTodayForecast key={i} temp={hour[12].temperature} time={'12:00 PM'} />
+                                        );
+                                    }
+                                    if (i == 4) {
+                                        return (
+                                            <CardTodayForecast key={i} temp={hour[15].temperature} time={'3:00 PM'} />
+                                        );
+                                    }
+                                    if (i == 5) {
+                                        return (
+                                            <CardTodayForecast key={i} temp={hour[18].temperature} time={'6:00 PM'} />
+                                        );
+                                    }
+                                    if (i == 6) {
+                                        return (
+                                            <CardTodayForecast key={i} temp={hour[21].temperature} time={'9:00 PM'} />
+                                        );
+                                    }
+
+                                })
+                                : 'Loading data...'
+                        }
+
                     </div>
                 </div>
                 <div className='air-conditions'>
@@ -66,7 +127,7 @@ const Weather = () => {
             </div>
             <div className='last-week'>
                 <ul>
-                    <li>a</li>
+                    <li></li>
                 </ul>
             </div>
         </div>
