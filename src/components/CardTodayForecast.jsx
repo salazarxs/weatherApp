@@ -25,7 +25,7 @@ const CardTodayForecast = ({ time, weatherImg, temp }) => {
             <p>{time ? time : '04:20'}</p>
 
             <img src={weatherImg == 'Cloudy' ? cloudy : weatherImg == 'Sun' ? sun : weatherImg == 'Rain' ? rain : sunWhitClouds} alt="Image of current weather" />
-            <h3>{temp ? `${temp}°C` : '0°C'}</h3>
+            <h3>{temp ? `${temp}°F` : '0°F'}</h3>
         </div>
     );
 }

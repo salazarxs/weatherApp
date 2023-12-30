@@ -31,7 +31,7 @@ const Weather = () => {
         GetTodayForecast(setTodayPerHourWeather);
 
     }, []);
-    useEffect(() => {
+    /* useEffect(() => {
         if (todayPerHourWeather != undefined) {
             console.log(todayPerHourWeather)
             todayPerHourWeather.map((currentHour, i) => {
@@ -42,7 +42,7 @@ const Weather = () => {
         } else {
             console.log('undefined la wea')
         }
-    }, [todayPerHourWeather])
+    }, [todayPerHourWeather]) */
 
     return (
         <div className='container-weather'>
@@ -86,17 +86,6 @@ const Weather = () => {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
-                                                temp={currentHour[0][21][0].main.temp}
-                                                time={'21:00 PM'}
-                                                weatherImg={currentHour[0]}
-                                            />
-
-                                        );
-                                    }
-                                    if (i == 1) {
-                                        return (
-                                            <CardTodayForecast
-                                                key={i}
                                                 temp={currentHour[0][0][0].main.temp}
                                                 time={'00:00 AM'}
                                                 weatherImg={currentHour[0]}
@@ -104,7 +93,7 @@ const Weather = () => {
 
                                         );
                                     }
-                                    if (i == 2) {
+                                    if (i == 1) {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
@@ -115,7 +104,7 @@ const Weather = () => {
 
                                         );
                                     }
-                                    if (i == 3) {
+                                    if (i == 2) {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
@@ -126,7 +115,7 @@ const Weather = () => {
 
                                         );
                                     }
-                                    if (i == 4) {
+                                    if (i == 3) {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
@@ -137,7 +126,7 @@ const Weather = () => {
 
                                         );
                                     }
-                                    if (i == 5) {
+                                    if (i == 4) {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
@@ -148,13 +137,24 @@ const Weather = () => {
 
                                         );
                                     }
-                                    if (i == 6) {
+                                    if (i == 5) {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
                                                 temp={currentHour[0][18][0].main.temp}
                                                 time={'18:00 PM'}
                                                 weatherImg={currentHour[18]}
+                                            />
+
+                                        );
+                                    }
+                                    if (i == 6) {
+                                        return (
+                                            <CardTodayForecast
+                                                key={i}
+                                                temp={currentHour[0][21][0].main.temp}
+                                                time={'21:00 PM'}
+                                                weatherImg={currentHour[21]}
                                             />
 
                                         );

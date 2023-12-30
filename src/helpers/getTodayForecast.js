@@ -115,7 +115,14 @@ const GetTodayForecast = async (state) => {
                         }
                         //console.log(currentDate.getHours())
                     };
-                    finalDataHours.sort();
+                    finalDataHours.sort(function (a, b) {
+                        // Extraer las horas como números
+                        var hourA = parseInt(Object.keys(a[0])[0]);
+                        var hourB = parseInt(Object.keys(b[0])[0]);
+
+                        // Comparar las horas
+                        return hourA - hourB;
+                    });
                     state(finalDataHours);
                     console.log(finalDataHours);
                 }).catch(err => {
