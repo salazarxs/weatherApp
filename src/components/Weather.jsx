@@ -1,28 +1,45 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './Navbar';
+
+// Helpers
+
+import getCurrentPosition from '../helpers/getCurrentPosition';
+import getCurrentWeather from '../helpers/getCurrentWeather';
+import GetTodayForecast from '../helpers/getTodayForecast';
 
 //Styles
 import '../styles/Weather.css';
-import getCurrentPosition from '../helpers/getCurrentPosition';
-import getCurrentWeather from '../helpers/getCurrentWeather';
 
 //Images
 import cloudy from '../images/cloudy.png';
 import rain from '../images/rain.png';
 import sun from '../images/sun.png';
 import sunWhitClouds from '../images/sunWhitClouds.png';
+
+// icons
+import { WiHumidity } from "react-icons/wi";
+import { FaWind } from "react-icons/fa";
+import { LuSunrise } from "react-icons/lu";
+import { LuSunset } from "react-icons/lu";
+
+// Components
+import Navbar from './Navbar';
 import CardTodayForecast from './CardTodayForecast';
-import GetTodayForecast from '../helpers/getTodayForecast';
+import CardAirConditions from './CardAirConditions';
 
 const Weather = () => {
     const [todayWeather, setTodayWeather] = useState();
     const [todayPerHourWeather, setTodayPerHourWeather] = useState();
+    const [parseSunrise, setParseSunrise] = useState();
+    const [parseSunset, setParseSunset] = useState();
+
 
     useEffect(() => {
         getCurrentPosition()
             .then(data => {
                 getCurrentWeather(setTodayWeather, data.latitude, data.longitude,)
-            })
+            }).catch(err => {
+                console.log(err);
+            });
     }, []);
 
 
@@ -31,18 +48,15 @@ const Weather = () => {
         GetTodayForecast(setTodayPerHourWeather);
 
     }, []);
-    /* useEffect(() => {
-        if (todayPerHourWeather != undefined) {
-            console.log(todayPerHourWeather)
-            todayPerHourWeather.map((currentHour, i) => {
-                if (i == 0) {
-                    console.log(currentHour[0][18][0].main.temp)
-                }
-            })
-        } else {
-            console.log('undefined la wea')
+    useEffect(() => {
+        if (todayWeather) {
+            let sunrise = new Date(todayWeather.sys.sunrise * 1000);
+            let sunset = new Date(todayWeather.sys.sunset * 1000);
+
+            setParseSunrise(`${sunrise.getHours()}:${sunrise.getMinutes() < 10 ? '0' + sunrise.getMinutes() : sunrise.getMinutes()}`);
+            setParseSunset(`${sunset.getHours()}:${sunset.getMinutes() < 10 ? '0' + sunset.getMinutes() : sunset.getMinutes()}`);
         }
-    }, [todayPerHourWeather]) */
+    }, [todayWeather])
 
     return (
         <div className='container-weather'>
@@ -167,10 +181,57 @@ const Weather = () => {
                     </div>
                 </div>
                 <div className='air-conditions'>
+                    <div className="container-title-air-conditions">
+                        <p>AIR CONDITIONS</p>
+                    </div>
+                    <div className="container-data-air-conditions">
+                        {
 
+                            todayWeather != undefined ?
+                                <>
+
+                                    <CardAirConditions
+                                        key={'1'}
+                                        data={`${todayWeather.wind.speed} km/h`}
+                                        icon={<FaWind />}
+                                        title={'Wind'}
+
+
+                                    />
+                                    <CardAirConditions
+                                        key={'2'}
+                                        data={`${todayWeather.main.humidity}%`}
+                                        icon={<WiHumidity />}
+                                        title={'Humidity'}
+
+
+                                    />
+                                    <CardAirConditions
+                                        key={'3'}
+                                        data={parseSunset}
+                                        icon={<LuSunset />}
+                                        title={'Sunset'}
+
+
+                                    />
+                                    <CardAirConditions
+                                        key={'4'}
+                                        data={parseSunrise}
+                                        icon={<LuSunrise />}
+                                        title={'Sunrise'}
+
+
+                                    />
+                                </>
+                                : 'Loading data..'
+                        }
+                    </div>
                 </div>
             </div>
             <div className='last-week'>
+                <div className="container-title-last-week">
+                    <p>7-DAY FORECAST</p>
+                </div>
                 <ul>
                     <li></li>
                 </ul>

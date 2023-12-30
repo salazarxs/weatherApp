@@ -3,7 +3,7 @@ nav {
     align-items: center;
     flex-direction: column;
     height: 90vh;
-    width: 10vw;
+    width: 7vw;
     background-color: var(--ligth-dark-blue);
     border-radius: 2vw;
 }
