@@ -86,9 +86,9 @@ const Weather = () => {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
-                                                temp={currentHour[0][0][0].main.temp}
-                                                time={'00:00 AM'}
-                                                weatherImg={hour[0]}
+                                                temp={currentHour[0][21][0].main.temp}
+                                                time={'21:00 PM'}
+                                                weatherImg={currentHour[0]}
                                             />
 
                                         );
@@ -97,9 +97,9 @@ const Weather = () => {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
-                                                temp={currentHour[0][6][0].main.temp}
-                                                time={'6:00 AM'}
-                                                weatherImg={hour[6]}
+                                                temp={currentHour[0][0][0].main.temp}
+                                                time={'00:00 AM'}
+                                                weatherImg={currentHour[0]}
                                             />
 
                                         );
@@ -108,9 +108,9 @@ const Weather = () => {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
-                                                temp={currentHour[0][9][0].main.temp}
-                                                time={'9:00 AM'}
-                                                weatherImg={hour[9]}
+                                                temp={currentHour[0][6][0].main.temp}
+                                                time={'06:00 AM'}
+                                                weatherImg={currentHour[6]}
                                             />
 
                                         );
@@ -119,9 +119,9 @@ const Weather = () => {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
-                                                temp={currentHour[0][3][0].main.temp}
-                                                time={'12:00 PM'}
-                                                weatherImg={hour[3]}
+                                                temp={currentHour[0][9][0].main.temp}
+                                                time={'09:00 AM'}
+                                                weatherImg={currentHour[9]}
                                             />
 
                                         );
@@ -130,9 +130,9 @@ const Weather = () => {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
-                                                temp={currentHour[0][15][0].main.temp}
-                                                time={'3:00 PM'}
-                                                weatherImg={hour[15]}
+                                                temp={currentHour[0][12][0].main.temp}
+                                                time={'12:00 PM'}
+                                                weatherImg={currentHour[12]}
                                             />
 
                                         );
@@ -141,9 +141,9 @@ const Weather = () => {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
-                                                temp={currentHour[0][18][0].main.temp}
-                                                time={'6:00 PM'}
-                                                weatherImg={hour[18]}
+                                                temp={currentHour[0][15][0].main.temp}
+                                                time={'15:00 PM'}
+                                                weatherImg={currentHour[15]}
                                             />
 
                                         );
@@ -152,9 +152,9 @@ const Weather = () => {
                                         return (
                                             <CardTodayForecast
                                                 key={i}
-                                                temp={currentHour[0][21][0].main.temp}
-                                                time={'9:00 PM'}
-                                                weatherImg={hour[21]}
+                                                temp={currentHour[0][18][0].main.temp}
+                                                time={'18:00 PM'}
+                                                weatherImg={currentHour[18]}
                                             />
 
                                         );

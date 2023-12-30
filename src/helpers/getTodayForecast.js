@@ -115,6 +115,7 @@ const GetTodayForecast = async (state) => {
                         }
                         //console.log(currentDate.getHours())
                     };
+                    finalDataHours.sort();
                     state(finalDataHours);
                     console.log(finalDataHours);
                 }).catch(err => {
