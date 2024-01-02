@@ -138,6 +138,7 @@ table {
   --ligth-dark-blue: rgba(32, 43, 59, 1);
   --dark-blue: rgba(11, 19, 30, 1);
   --ligth-blue: rgb(68, 163, 255);
+  --btn-color: rgb(53, 69, 94);
   --font-color: #dde0e4ff;
   --font: 'Rubik', sans-serif;
   --font-color-secondary: #9399a2ff;
@@ -152,4 +153,19 @@ div#root {
   min-width: 100vw;
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+.separator {
+  width: 100%;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separator span {
+  background-color: var(--font-color-secondary);
+  height: 1px;
+  width: 90%;
+  display: flex;
 }

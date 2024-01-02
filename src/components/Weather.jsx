@@ -233,7 +233,7 @@ const Weather = () => {
                     <p>7-DAY FORECAST</p>
                 </div>
                 <ul>
-                    <li></li>
+                    <li style={{ color: 'var(--font-color)', padding: '0 10px' }}>The free weather api don't have this data, sorry 😢.</li>
                 </ul>
             </div>
         </div>

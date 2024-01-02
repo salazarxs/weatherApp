@@ -13,30 +13,32 @@ import { TfiMenuAlt } from 'react-icons/tfi';
 const Navbar = () => {
 
     return (
-        <nav style={{ margin: '0 3% 0 0' }}>
-            <ul>
-                <li>
-                    <Link to='/'>
-                        <IoUmbrella />
-                    </Link>
-                </li>
-                <li>
-                    <Link to='/'>
-                        <FaCloudSun />Weather
-                    </Link>
-                </li>
-                <li>
-                    <Link to='/cities'>
-                        <TfiMenuAlt />Cities
-                    </Link>
-                </li>
-                <li>
-                    <Link to='/settings'>
-                        <IoMdSettings />Settings
-                    </Link>
-                </li>
-            </ul>
-        </nav>
+        <div className="container-nav" style={{ margin: '0 3% 0 0' }}>
+            <nav >
+                <ul>
+                    <li>
+                        <Link to='/'>
+                            <IoUmbrella />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/'>
+                            <FaCloudSun />Weather
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/cities'>
+                            <TfiMenuAlt />Cities
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/settings'>
+                            <IoMdSettings />Settings
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     );
 }
 

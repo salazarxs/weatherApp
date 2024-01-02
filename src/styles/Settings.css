@@ -1,0 +1,197 @@
+.settings {
+    width: 55vw;
+}
+
+.settings .container-title {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.settings .container-title h2 {
+    color: white;
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+.units-container {
+    background-color: var(--ligth-dark-blue);
+    height: 70%;
+    width: 100%;
+    border-radius: 20px;
+    padding: 2%;
+}
+
+.units-container div.container-item-settings {
+    width: 100%;
+    height: 20%;
+}
+
+.units-container div .subtitle-settings {
+    color: var(--font-color-secondary);
+    font-family: var(--font);
+    font-size: 65%;
+    font-weight: 600;
+    padding: 2% 0;
+}
+
+button.btn-setting {
+    background-color: var(--dark-blue);
+    border: none;
+    outline: none;
+    color: var(--font-color);
+    font-family: var(--font);
+    max-width: 100%;
+    flex-grow: 1;
+    border-radius: 10px;
+}
+
+button.btn-setting.active {
+    background-color: var(--btn-color);
+    border-radius: 10px;
+}
+
+button.btn-setting:hover {
+    cursor: pointer;
+}
+
+.temp,
+.wind,
+.pressure,
+.precipitation,
+.distance {
+    width: 100%;
+    display: flex;
+    background-color: var(--dark-blue);
+    padding: 2px;
+    border-radius: 11px;
+    height: 40%;
+}
+
+.notifications-container {
+    width: 100%;
+    background-color: var(--ligth-dark-blue);
+    border-radius: 21px;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notifications-container div:nth-child(1) {
+    width: 80%;
+    height: 50%;
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+}
+
+.notifications-container div:nth-child(1) h2 {
+    color: var(--font-color);
+    font-weight: bold;
+    font-family: var(--font);
+    font-size: large;
+}
+
+.notifications-container div:nth-child(1) p {
+    color: var(--font-color-secondary);
+    font-family: var(--font);
+    font-size: small;
+}
+
+.notifications-container div:nth-child(2) {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2%;
+}
+
+.general-container {
+    height: 30%;
+    width: 100%;
+    background-color: var(--ligth-dark-blue);
+    border-radius: 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.general-container .time-container,
+.general-container .location-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.general-container .time-container {
+    width: 100%;
+    height: 40%;
+}
+
+.time-container div:nth-child(1) {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--font-color);
+    font-family: var(--font);
+    font-weight: bold;
+    padding-left: 2%;
+}
+
+.time-container div:nth-child(2) {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.general-container .location-container {
+    width: 100%;
+    height: 60%;
+}
+
+.general-container .location-container div:nth-child(1) {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 2%;
+}
+
+.location-container div:nth-child(1) h2 {
+    color: var(--font-color);
+    font-size: large;
+    font-weight: bold;
+    font-family: var(--font);
+}
+
+.location-container div:nth-child(1) p {
+    color: var(--font-color-secondary);
+    font-size: small;
+    font-family: var(--font);
+}
+
+.general-container .location-container div:nth-child(2) {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
