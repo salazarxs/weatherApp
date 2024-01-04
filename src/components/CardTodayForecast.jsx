@@ -8,11 +8,13 @@ import sun from '../images/sun.png';
 import cloudy from '../images/cloudy.png';
 import rain from '../images/rain.png';
 import sunWhitClouds from '../images/sunWhitClouds.png';
+import { CalculateTemp } from '../helpers/calculateSettings';
 
-const CardTodayForecast = ({ time, weatherImg, temp }) => {
+const CardTodayForecast = ({ time, weatherImg, temp, measure }) => {
 
     useEffect(() => {
         if (temp) {
+            let numTemp = new Date();
             console.log(temp)
         } else {
             console.log('nota ')
@@ -25,7 +27,7 @@ const CardTodayForecast = ({ time, weatherImg, temp }) => {
             <p>{time ? time : '04:20'}</p>
 
             <img src={weatherImg == 'Cloudy' ? cloudy : weatherImg == 'Sun' ? sun : weatherImg == 'Rain' ? rain : sunWhitClouds} alt="Image of current weather" />
-            <h3>{temp ? `${temp}°F` : '0°F'}</h3>
+            <h3>{CalculateTemp(measure, temp)}</h3>
         </div>
     );
 }

@@ -25,13 +25,14 @@ import { LuSunset } from "react-icons/lu";
 import Navbar from './Navbar';
 import CardTodayForecast from './CardTodayForecast';
 import CardAirConditions from './CardAirConditions';
+import { CalculateTemp } from '../helpers/calculateSettings';
 
 const Weather = () => {
     const [todayWeather, setTodayWeather] = useState();
     const [todayPerHourWeather, setTodayPerHourWeather] = useState();
     const [parseSunrise, setParseSunrise] = useState();
     const [parseSunset, setParseSunset] = useState();
-
+    const [measure, setMeasure] = useState('C');
 
     useEffect(() => {
         getCurrentPosition()
@@ -46,6 +47,7 @@ const Weather = () => {
     // Get today weather forecast
     useEffect(() => {
         GetTodayForecast(setTodayPerHourWeather);
+        setMeasure(localStorage.getItem('temperature'));
 
     }, []);
     useEffect(() => {
@@ -53,8 +55,8 @@ const Weather = () => {
             let sunrise = new Date(todayWeather.sys.sunrise * 1000);
             let sunset = new Date(todayWeather.sys.sunset * 1000);
 
-            setParseSunrise(`${sunrise.getHours()}:${sunrise.getMinutes() < 10 ? '0' + sunrise.getMinutes() : sunrise.getMinutes()}`);
-            setParseSunset(`${sunset.getHours()}:${sunset.getMinutes() < 10 ? '0' + sunset.getMinutes() : sunset.getMinutes()}`);
+            setParseSunrise(`${sunrise.getHours() < 10 ? '0' + sunrise.getHours() : sunrise.getHours()}:${sunrise.getMinutes() < 10 ? '0' + sunrise.getMinutes() : sunrise.getMinutes()}`);
+            setParseSunset(`${sunset.getHours() < 10 ? '0' + sunset.getHours() : sunset.getHours()}:${sunset.getMinutes() < 10 ? '0' + sunset.getMinutes() : sunset.getMinutes()}`);
         }
     }, [todayWeather])
 
@@ -70,10 +72,10 @@ const Weather = () => {
                             <>
                                 <div className="container-city">
                                     <h2>{todayWeather.name}</h2>
-                                    <p>Feels like: {todayWeather.main.feels_like}°F</p>
+                                    <p>Feels like: {CalculateTemp(measure, todayWeather.main.feels_like)}</p>
                                 </div>
                                 <div className="container-temp">
-                                    <p>{todayWeather.main.temp}°F</p>
+                                    <p>{CalculateTemp(measure, todayWeather.main.temp)}</p>
                                 </div>
                             </>
                             : 'Loading data'}
@@ -103,6 +105,7 @@ const Weather = () => {
                                                 temp={currentHour[0][0][0].main.temp}
                                                 time={'00:00 AM'}
                                                 weatherImg={currentHour[0]}
+                                                measure={measure}
                                             />
 
                                         );
@@ -114,6 +117,7 @@ const Weather = () => {
                                                 temp={currentHour[0][6][0].main.temp}
                                                 time={'06:00 AM'}
                                                 weatherImg={currentHour[6]}
+                                                measure={measure}
                                             />
 
                                         );
@@ -125,6 +129,7 @@ const Weather = () => {
                                                 temp={currentHour[0][9][0].main.temp}
                                                 time={'09:00 AM'}
                                                 weatherImg={currentHour[9]}
+                                                measure={measure}
                                             />
 
                                         );
@@ -136,6 +141,7 @@ const Weather = () => {
                                                 temp={currentHour[0][12][0].main.temp}
                                                 time={'12:00 PM'}
                                                 weatherImg={currentHour[12]}
+                                                measure={measure}
                                             />
 
                                         );
@@ -147,6 +153,7 @@ const Weather = () => {
                                                 temp={currentHour[0][15][0].main.temp}
                                                 time={'15:00 PM'}
                                                 weatherImg={currentHour[15]}
+                                                measure={measure}
                                             />
 
                                         );
@@ -158,6 +165,7 @@ const Weather = () => {
                                                 temp={currentHour[0][18][0].main.temp}
                                                 time={'18:00 PM'}
                                                 weatherImg={currentHour[18]}
+                                                measure={measure}
                                             />
 
                                         );
@@ -169,6 +177,7 @@ const Weather = () => {
                                                 temp={currentHour[0][21][0].main.temp}
                                                 time={'21:00 PM'}
                                                 weatherImg={currentHour[21]}
+                                                measure={measure}
                                             />
 
                                         );
@@ -192,7 +201,7 @@ const Weather = () => {
 
                                     <CardAirConditions
                                         key={'1'}
-                                        data={`${todayWeather.wind.speed} km/h`}
+                                        data={[{ wind: todayWeather.wind.speed }]}
                                         icon={<FaWind />}
                                         title={'Wind'}
 
@@ -200,7 +209,7 @@ const Weather = () => {
                                     />
                                     <CardAirConditions
                                         key={'2'}
-                                        data={`${todayWeather.main.humidity}%`}
+                                        data={[{ humidity: todayWeather.main.humidity }]}
                                         icon={<WiHumidity />}
                                         title={'Humidity'}
 
