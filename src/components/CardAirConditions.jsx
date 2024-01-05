@@ -10,7 +10,6 @@ const CardAirConditions = ({ icon, data, title }) => {
     const [measure, setMeasure] = useState('m/s');
     useEffect(() => {
         setMeasure(localStorage.getItem('wind'));
-        console.log(`dataaaaaa->> ${JSON.stringify(data)}`)
     })
     let parseData;
     if (title == 'Wind') {
