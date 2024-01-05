@@ -112,7 +112,7 @@ const Weather = () => {
                     <div className="container-title-forecast">
                         <p>TODAY'S FORECAST</p>
                     </div>
-                    <button onClick={() => { localStorage.setItem("historyCities", 'Santiago') }}>Wajaaa</button>
+
                     <div className="container-data-forecast">
                         {
                             todayPerHourWeather !== undefined
