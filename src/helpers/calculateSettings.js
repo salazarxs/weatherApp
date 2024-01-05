@@ -1,12 +1,14 @@
 
 export const CalculateTemp = (measure, temp) => {
+    let celcius = 0;
+    let fahrenheit = 0;
     switch (measure) {
         case 'F':
-            let fahrenheit = (9 / 5) * (temp - 273.15) + 32;
+            fahrenheit = (9 / 5) * (temp - 273.15) + 32;
             return `${fahrenheit.toFixed(2)}°F`;
             break;
         case 'C':
-            let celcius = temp - 273.15;
+            celcius = temp - 273.15;
             return `${celcius.toFixed(2)}°C`;
             break;
         default: celcius = temp - 273.15;
@@ -17,17 +19,20 @@ export const CalculateTemp = (measure, temp) => {
 };
 
 export const CalculateWind = (measure, wind) => {
+    let ms = 0;
+    let kmh = 0;
+    let knots = 0;
     switch (measure) {
         case 'm/s':
-            let ms = wind;
+            ms = wind;
             return `${ms.toFixed(2)}m/s`;
             break;
         case 'km/h':
-            let kmh = wind * 3.6;
+            kmh = wind * 3.6;
             return `${kmh.toFixed(2)}km/h`;
             break;
         case 'knots':
-            let knots = wind * 1.94384;
+            knots = wind * 1.94384;
             return `${knots.toFixed(2)}knots`;
             break;
         default:

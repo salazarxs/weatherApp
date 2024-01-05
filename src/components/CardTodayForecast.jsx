@@ -12,16 +12,6 @@ import { CalculateTemp } from '../helpers/calculateSettings';
 
 const CardTodayForecast = ({ time, weatherImg, temp, measure }) => {
 
-    useEffect(() => {
-        if (temp) {
-            let numTemp = new Date();
-            console.log(temp)
-        } else {
-            console.log('nota ')
-        }
-    }, [])
-
-
     return (
         <div className='container-card-today-forecast'>
             <p>{time ? time : '04:20'}</p>

@@ -1,0 +1,19 @@
+.container-cities {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.not-found-cities {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--font-color-secondary);
+    font-family: var(--font);
+    font-size: 2vw;
+    font-weight: bold;
+}

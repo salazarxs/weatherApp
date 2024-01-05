@@ -11,11 +11,11 @@ import '../styles/Settings.css';
 
 const Settings = () => {
 
-    const [temperature, setTemperature] = useState(localStorage.getItem('temperature'));
-    const [wind, setWind] = useState(localStorage.getItem('wind'));
-    const [pressure, setPressure] = useState(localStorage.getItem('pressure'));
-    const [precipitation, setPrecipitation] = useState(localStorage.getItem('precipitation'));
-    const [distance, setDistance] = useState(localStorage.getItem('distance'));
+    const [temperature, setTemperature] = useState(localStorage.getItem('temperature') ? localStorage.getItem('temperature') : 0);
+    const [wind, setWind] = useState(localStorage.getItem('wind') ? localStorage.getItem('wind') : 0);
+    const [pressure, setPressure] = useState(localStorage.getItem('pressure') ? localStorage.getItem('pressure') : 0);
+    const [precipitation, setPrecipitation] = useState(localStorage.getItem('precipitation') ? localStorage.getItem('precipitation') : 0);
+    const [distance, setDistance] = useState(localStorage.getItem('distance') ? localStorage.getItem('distance') : 0);
 
     const label = { inputProps: { 'aria-label': 'Switch demo' } }
 
