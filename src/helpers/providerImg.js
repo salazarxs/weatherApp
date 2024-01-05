@@ -6,7 +6,7 @@ import sunWhitClouds from '../images/sunWhitClouds.png';
 
 const ProviderImg = (currentTime) => {
     switch (currentTime) {
-        case 'Cloudy':
+        case 'Clouds':
             return cloudy;
         case 'Sun':
             return sun;

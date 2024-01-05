@@ -16,7 +16,7 @@ const CardTodayForecast = ({ time, weatherImg, temp, measure }) => {
         <div className='container-card-today-forecast'>
             <p>{time ? time : '04:20'}</p>
 
-            <img src={weatherImg == 'Cloudy' ? cloudy : weatherImg == 'Sun' ? sun : weatherImg == 'Rain' ? rain : sunWhitClouds} alt="Image of current weather" />
+            <img src={`http://openweathermap.org/img/w/${weatherImg}.png`} alt="Image of current weather" />
             <h3>{CalculateTemp(measure, temp)}</h3>
         </div>
     );
