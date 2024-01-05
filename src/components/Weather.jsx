@@ -33,6 +33,15 @@ const Weather = () => {
     const [parseSunrise, setParseSunrise] = useState();
     const [parseSunset, setParseSunset] = useState();
     const [measure, setMeasure] = useState('C');
+    const [currentSearch, setCurrentSearch] = useState();
+
+
+    const HandleSearch = () => {
+        let currentHistory = JSON.parse(localStorage.getItem('historySearch')) || [];
+        currentHistory.push(currentSearch);
+        localStorage.setItem('historySearch', JSON.stringify(currentHistory));
+    }
+
 
     useEffect(() => {
         getCurrentPosition()
@@ -49,6 +58,7 @@ const Weather = () => {
         GetTodayForecast(setTodayPerHourWeather);
         setMeasure(localStorage.getItem('temperature'));
 
+
     }, []);
     useEffect(() => {
         if (todayWeather) {
@@ -59,6 +69,13 @@ const Weather = () => {
             setParseSunset(`${sunset.getHours() < 10 ? '0' + sunset.getHours() : sunset.getHours()}:${sunset.getMinutes() < 10 ? '0' + sunset.getMinutes() : sunset.getMinutes()}`);
         }
     }, [todayWeather])
+
+    useEffect(() => {
+        if (todayPerHourWeather != undefined) {
+            console.log(todayPerHourWeather[0][0]["0"][0].weather)
+            console.log(todayPerHourWeather[1][0]["6"][0].weather[0].icon)
+        }
+    }, [todayPerHourWeather])
 
     return (
         <div className='container-weather'>
@@ -83,8 +100,9 @@ const Weather = () => {
                     <div className='current-weather-img'>
                         {
                             todayWeather ?
+
                                 <img
-                                    src={todayWeather.weather.main == 'Cloudy' ? cloudy : todayWeather.weather.main == 'Sun' ? sun : todayWeather.weather.main == 'Rain' ? rain : sunWhitClouds}
+                                    src={`http://openweathermap.org/img/w/${todayWeather.weather[0].icon}.png`}
                                 />
                                 : 'Loading data'
                         }
@@ -94,6 +112,7 @@ const Weather = () => {
                     <div className="container-title-forecast">
                         <p>TODAY'S FORECAST</p>
                     </div>
+                    <button onClick={() => { localStorage.setItem("historyCities", 'Santiago') }}>Wajaaa</button>
                     <div className="container-data-forecast">
                         {
                             todayPerHourWeather !== undefined
@@ -104,7 +123,7 @@ const Weather = () => {
                                                 key={i}
                                                 temp={currentHour[0][0][0].main.temp}
                                                 time={'00:00 AM'}
-                                                weatherImg={currentHour[0]}
+                                                weatherImg={currentHour[0]["0"][0].weather[0].icon}
                                                 measure={measure}
                                             />
 
@@ -116,7 +135,7 @@ const Weather = () => {
                                                 key={i}
                                                 temp={currentHour[0][6][0].main.temp}
                                                 time={'06:00 AM'}
-                                                weatherImg={currentHour[6]}
+                                                weatherImg={currentHour[0]["6"][0].weather[0].icon}
                                                 measure={measure}
                                             />
 
@@ -128,7 +147,7 @@ const Weather = () => {
                                                 key={i}
                                                 temp={currentHour[0][9][0].main.temp}
                                                 time={'09:00 AM'}
-                                                weatherImg={currentHour[9]}
+                                                weatherImg={currentHour[0]["9"][0].weather[0].icon}
                                                 measure={measure}
                                             />
 
@@ -140,7 +159,7 @@ const Weather = () => {
                                                 key={i}
                                                 temp={currentHour[0][12][0].main.temp}
                                                 time={'12:00 PM'}
-                                                weatherImg={currentHour[12]}
+                                                weatherImg={currentHour[0]["12"][0].weather[0].icon}
                                                 measure={measure}
                                             />
 
@@ -152,7 +171,7 @@ const Weather = () => {
                                                 key={i}
                                                 temp={currentHour[0][15][0].main.temp}
                                                 time={'15:00 PM'}
-                                                weatherImg={currentHour[15]}
+                                                weatherImg={currentHour[0]["15"][0].weather[0].icon}
                                                 measure={measure}
                                             />
 
@@ -164,7 +183,7 @@ const Weather = () => {
                                                 key={i}
                                                 temp={currentHour[0][18][0].main.temp}
                                                 time={'18:00 PM'}
-                                                weatherImg={currentHour[18]}
+                                                weatherImg={currentHour[0]["18"][0].weather[0].icon}
                                                 measure={measure}
                                             />
 
@@ -176,7 +195,7 @@ const Weather = () => {
                                                 key={i}
                                                 temp={currentHour[0][21][0].main.temp}
                                                 time={'21:00 PM'}
-                                                weatherImg={currentHour[21]}
+                                                weatherImg={currentHour[0]["21"][0].weather[0].icon}
                                                 measure={measure}
                                             />
 

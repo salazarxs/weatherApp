@@ -7,6 +7,7 @@ import ProviderImg from '../helpers/providerImg';
 import GetCurrentTime from '../helpers/getCurrentTime';
 
 // Styles
+import '../styles/CardLast5Cities.css';
 
 const CardLast5Cities = ({ city }) => {
 
@@ -26,6 +27,7 @@ const CardLast5Cities = ({ city }) => {
     useEffect(() => {
         if (currentCity != undefined) {
             GetCurrentTime(currentCity.coord.lat, currentCity.coord.lon, setCurrentTime);
+
             console.log(currentTime)
         }
     }, [currentCity])
@@ -48,8 +50,8 @@ const CardLast5Cities = ({ city }) => {
             {currentCity != undefined ?
                 <>
                     <div >
-                        <img src={ProviderImg(currentCity.weather.main)} alt={`Image of current weather ${CalculateTemp(measure, currentCity.main.temp ? currentCity.main.temp : 0)}`}
-                            style={{ width: '10px', height: 'auto' }}
+                        <img src={`http://openweathermap.org/img/w/${currentCity.weather[0].icon}.png`} alt={`Image of current weather ${CalculateTemp(measure, currentCity.main.temp ? currentCity.main.temp : 0)}`}
+
                         />
                     </div>
                     <div style={{ color: 'white' }}>
