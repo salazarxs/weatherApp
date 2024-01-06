@@ -17,7 +17,7 @@ import sunWhitClouds from '../images/sunWhitClouds.png';
 
 // icons
 import { WiHumidity } from "react-icons/wi";
-import { FaWind } from "react-icons/fa";
+import { FaSearch, FaWind } from "react-icons/fa";
 import { LuSunrise } from "react-icons/lu";
 import { LuSunset } from "react-icons/lu";
 
@@ -79,10 +79,15 @@ const Weather = () => {
 
     return (
         <div className='container-weather'>
-            <Navbar />
+            <div className="container-nav">
+                <Navbar />
+            </div>
 
             <div className='current-weather'>
-                <input type="text" placeholder='Search for cities' />
+                <form >
+                    <input type="text" placeholder='Search for cities' />
+                    <button type='submit'><FaSearch /></button>
+                </form>
                 <div className='today-weather'>
                     <div className='stats'>
                         {todayWeather != undefined ?

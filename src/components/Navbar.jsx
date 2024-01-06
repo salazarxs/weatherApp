@@ -13,7 +13,7 @@ import { TfiMenuAlt } from 'react-icons/tfi';
 const Navbar = () => {
 
     return (
-        <div className="container-nav" style={{ margin: '0 3% 0 0' }}>
+        <div className="container-nav" >
             <nav >
                 <ul>
                     <li>
