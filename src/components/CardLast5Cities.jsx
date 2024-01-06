@@ -59,7 +59,7 @@ const CardLast5Cities = ({ city }) => {
                         {
                             currentHour != undefined ?
                                 <p>{currentHour}</p>
-                                : 'Loading data..'
+                                : <p>'Loading data..'</p>
                         }
 
                     </div>

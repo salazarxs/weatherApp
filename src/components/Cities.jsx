@@ -8,6 +8,7 @@ import Navbar from './Navbar';
 
 // Helpers
 import CardLast5Cities from './CardLast5Cities';
+import { FaSearch } from 'react-icons/fa';
 
 const Cities = () => {
 
@@ -23,7 +24,10 @@ const Cities = () => {
         <div className='container-cities'>
             <Navbar />
             <div className="container-cards-last5Cities">
-                <input type="text" placeholder='Search cities...' className='search-cities' />
+                <form >
+                    <input type="text" placeholder='Search for cities' className='search-cities' />
+                    <button type='submit'><FaSearch /></button>
+                </form>
                 {
                     last5Cities.length != 0 ?
                         last5Cities.map((city, i) => (
