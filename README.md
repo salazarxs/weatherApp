@@ -9,6 +9,9 @@ Currently, two official plugins are available:
 
 _This project is only for desktop_
 
+<!--
+
 - [api data per hour](https://docs.tomorrow.io/reference/weather-recent-history)
 
 - [plantilla](https://app.uizard.io/templates/Ewg08vdL3KCPwevXrX3B/fullscreen)
+-->
