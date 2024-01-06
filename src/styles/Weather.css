@@ -56,6 +56,10 @@
     overflow: hidden;
 }
 
+.current-weather form button:hover {
+    cursor: pointer;
+}
+
 .current-weather form button svg {
     max-width: 100%;
     height: auto;

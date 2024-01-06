@@ -26,6 +26,7 @@ import Navbar from './Navbar';
 import CardTodayForecast from './CardTodayForecast';
 import CardAirConditions from './CardAirConditions';
 import { CalculateTemp } from '../helpers/calculateSettings';
+import SearchWeather from '../helpers/searchWeather';
 
 const Weather = () => {
     const [todayWeather, setTodayWeather] = useState();
@@ -34,12 +35,15 @@ const Weather = () => {
     const [parseSunset, setParseSunset] = useState();
     const [measure, setMeasure] = useState('C');
     const [currentSearch, setCurrentSearch] = useState();
+    let currentHistory = JSON.parse(localStorage.getItem('historySearch')) || [];
 
-
-    const HandleSearch = () => {
-        let currentHistory = JSON.parse(localStorage.getItem('historySearch')) || [];
+    const handleSearch = (e) => {
+        e.preventDefault();
+        currentHistory = JSON.parse(localStorage.getItem('historySearch')) || [];
         currentHistory.push(currentSearch);
+        SearchWeather(currentSearch, setTodayWeather);
         localStorage.setItem('historySearch', JSON.stringify(currentHistory));
+        setCurrentSearch('');
     }
 
 
@@ -51,7 +55,6 @@ const Weather = () => {
                 console.log(err);
             });
     }, []);
-
 
     // Get today weather forecast
     useEffect(() => {
@@ -84,8 +87,17 @@ const Weather = () => {
             </div>
 
             <div className='current-weather'>
-                <form >
-                    <input type="text" placeholder='Search for cities' />
+                <form onSubmit={(e) => {
+                    handleSearch(e)
+                }}>
+                    <input type="text"
+                        placeholder='Search for cities'
+                        onChange={(e) => {
+                            setCurrentSearch(e.target.value)
+                        }}
+                        value={currentSearch}
+
+                    />
                     <button type='submit'><FaSearch /></button>
                 </form>
                 <div className='today-weather'>
