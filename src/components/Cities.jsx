@@ -23,14 +23,15 @@ const Cities = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         currentHistory = JSON.parse(localStorage.getItem('historySearch')) || [];
-
-        currentHistory.unshift(currentSearch);
-        if (currentHistory.length >= 5) {
-            currentHistory.pop();
+        if (currentSearch !== '') {
+            currentHistory.unshift(currentSearch);
+            if (currentHistory.length >= 5) {
+                currentHistory.pop();
+            }
+            SearchWeather(currentSearch, setSearch);
+            localStorage.setItem('historySearch', JSON.stringify(currentHistory));
+            setCurrentSearch('');
         }
-        SearchWeather(currentSearch, setSearch);
-        localStorage.setItem('historySearch', JSON.stringify(currentHistory));
-        setCurrentSearch('');
     }
 
 
