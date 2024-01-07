@@ -26,7 +26,7 @@ import Navbar from './Navbar';
 import CardTodayForecast from './CardTodayForecast';
 import CardAirConditions from './CardAirConditions';
 import { CalculateTemp } from '../helpers/calculateSettings';
-import SearchWeather from '../helpers/searchWeather';
+import { SearchWeather } from '../helpers/searchWeather';
 
 const Weather = () => {
     const [todayWeather, setTodayWeather] = useState();
@@ -73,12 +73,6 @@ const Weather = () => {
         }
     }, [todayWeather])
 
-    useEffect(() => {
-        if (todayPerHourWeather != undefined) {
-            console.log(todayPerHourWeather[0][0]["0"][0].weather)
-            console.log(todayPerHourWeather[1][0]["6"][0].weather[0].icon)
-        }
-    }, [todayPerHourWeather])
 
     return (
         <div className='container-weather'>

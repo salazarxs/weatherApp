@@ -124,7 +124,7 @@ const GetTodayForecast = async (state) => {
                         return hourA - hourB;
                     });
                     state(finalDataHours);
-                    console.log(finalDataHours);
+
                 }).catch(err => {
                     console.log(err)
                 })

@@ -8,10 +8,6 @@ const getCurrentWeather = async (state, lat, lon) => {
     await axios.get(URI)
         .then(data => {
             state(data.data);
-            console.log(data.data.sys)
-            const surnise = new Date(data.data.sys.sunrise);
-            console.log(surnise.getHours())
-            console.log(surnise.getMinutes())
         })
         .catch(err => {
             console.log(err);
