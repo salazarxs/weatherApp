@@ -169,3 +169,25 @@ div#root {
   width: 90%;
   display: flex;
 }
+
+@media screen and (max-width:1023px) {
+  #root {
+    display: none;
+  }
+
+  #mobile {
+    display: flex;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  #mobile {
+    display: none;
+  }
+}
