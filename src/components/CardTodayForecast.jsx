@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 // Styles
 import '../styles/CardTodayForecast.css';
+import '../styles/mobile/CardTodayForecast.css';
 
-// Images
-import sun from '../images/sun.png';
-import cloudy from '../images/cloudy.png';
-import rain from '../images/rain.png';
-import sunWhitClouds from '../images/sunWhitClouds.png';
+
 import { CalculateTemp } from '../helpers/calculateSettings';
 
 const CardTodayForecast = ({ time, weatherImg, temp, measure }) => {

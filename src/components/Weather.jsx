@@ -8,6 +8,7 @@ import GetTodayForecast from '../helpers/getTodayForecast';
 
 //Styles
 import '../styles/Weather.css';
+import '../styles/mobile/Weather.css';
 
 //Images
 import cloudy from '../images/cloudy.png';
@@ -76,7 +77,7 @@ const Weather = () => {
 
     return (
         <div className='container-weather'>
-            <div className="container-nav">
+            <div className="container-nav container-nav-weather">
                 <Navbar />
             </div>
 
@@ -274,6 +275,9 @@ const Weather = () => {
                 <ul>
                     <li style={{ color: 'var(--font-color)', padding: '0 10px' }}>The free weather api don't have this data, sorry 😢.</li>
                 </ul>
+            </div>
+            <div className="container-nav-mobile">
+                <Navbar />
             </div>
         </div>
     );

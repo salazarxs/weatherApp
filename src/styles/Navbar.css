@@ -11,17 +11,20 @@
     margin: 0 3% 0 1%;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 90vh;
-    width: 7vw;
-    background-color: var(--ligth-dark-blue);
-    border-radius: 2vw;
-    position: fixed;
-    align-self: center;
+@media screen and (min-width:1024px) {
+    nav {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 90vh;
+        width: 7vw;
+        background-color: var(--ligth-dark-blue);
+        border-radius: 2vw;
+        position: fixed;
+        align-self: center;
+    }
 }
+
 
 nav ul a {
     all: unset;

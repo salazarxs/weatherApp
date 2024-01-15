@@ -8,6 +8,7 @@ import GetCurrentTime from '../helpers/getCurrentTime';
 
 // Styles
 import '../styles/CardLast5Cities.css';
+import '../styles/mobile/CardLast5Cities.css';
 
 const CardLast5Cities = ({ city }) => {
 

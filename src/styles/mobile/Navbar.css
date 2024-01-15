@@ -1,0 +1,41 @@
+@media screen and (max-width:1023px) {
+    .container-nav {
+        flex-direction: row;
+        width: 100vw;
+        height: 8vh;
+        margin: 4% 0;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+
+    .container-nav nav,
+    .container-nav nav ul {
+        background-color: var(--ligth-dark-blue);
+        flex-direction: row;
+        width: 90%;
+        border-radius: 2vw;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-nav nav ul li {
+        width: 25%;
+        height: 100%;
+    }
+
+    .container-nav nav ul li a {
+        width: 100%;
+        height: 90%;
+    }
+
+    .container-nav nav ul li a svg {
+        width: 80%;
+    }
+
+}

@@ -1,0 +1,9 @@
+@media screen and (max-width:1023px) {
+    .container-card-air-condition .icon-condition {
+        width: 20%;
+    }
+
+    .container-card-air-condition .data-air-condition p {
+        font-size: x-large;
+    }
+}

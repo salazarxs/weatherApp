@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-
+// styles
 import '../styles/CardAirCondition.css';
+import '../styles/mobile/CardAirConditions.css';
+
+// helpers
 import { CalculateWind } from '../helpers/calculateSettings';
 
 

@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 //Styles
 import '../styles/Navbar.css';
+import '../styles/mobile/Navbar.css';
 
 // Icons
 import { IoMdSettings } from 'react-icons/io';

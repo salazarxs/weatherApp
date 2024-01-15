@@ -1,0 +1,13 @@
+@media screen and (max-width:1024px) {
+    .settings-container {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 100px;
+    }
+
+    .settings {
+        width: 80vw;
+        padding-bottom: 50%;
+    }
+
+}

@@ -1,0 +1,49 @@
+@media screen and (min-width:1024px) {
+    .container-nav-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1023px) {
+    .container-weather {
+        flex-direction: column;
+        padding-bottom: 10%;
+    }
+
+    .container-weather .container-nav-weather {
+        display: none;
+
+    }
+
+
+    /* 60 40*/
+    .today-weather .stats {
+        width: 60%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .current-weather .today-weather .current-weather-img {
+        width: 40%;
+    }
+
+    .today-forecast {
+        overflow: hidden;
+    }
+
+    .today-forecast .container-data-forecast {
+        overflow: auto;
+        flex-wrap: nowrap;
+        justify-content: unset;
+    }
+
+    .air-conditions {
+        margin-top: 8%;
+    }
+
+    .last-week {
+        display: none;
+    }
+}

@@ -1,0 +1,14 @@
+@media screen and (max-width:1023px) {
+    .container-card-today-forecast {
+        min-width: 20vw;
+        margin: 0 2%;
+    }
+
+    .container-card-today-forecast p {
+        font-size: medium;
+    }
+
+    .container-card-today-forecast h3 {
+        font-size: large;
+    }
+}

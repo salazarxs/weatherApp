@@ -170,7 +170,7 @@ div#root {
   display: flex;
 }
 
-@media screen and (max-width:1023px) {
+/* @media screen and (max-width:1023px) {
   #root {
     display: none;
   }
@@ -190,4 +190,4 @@ div#root {
   #mobile {
     display: none;
   }
-}
+} */

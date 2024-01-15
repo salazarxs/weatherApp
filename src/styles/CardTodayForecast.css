@@ -31,13 +31,3 @@
     font-weight: bold;
     font-size: large;
 }
-
-@media screen and (min-width:1024px) and (max-width:1300px) {
-    .container-card-today-forecast p {
-        font-size: small;
-    }
-
-    .container-card-today-forecast h3 {
-        font-size: medium;
-    }
-}

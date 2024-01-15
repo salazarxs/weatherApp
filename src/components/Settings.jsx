@@ -7,6 +7,7 @@ import { Switch } from '@mui/material';
 
 // Styles
 import '../styles/Settings.css';
+import '../styles/mobile/Settings.css';
 
 
 const Settings = () => {
@@ -37,7 +38,7 @@ const Settings = () => {
     }
 
     return (
-        <div style={{ display: 'flex', minHeight: '100vh', paddingBottom: '400px', }}>
+        <div style={{ display: 'flex', minHeight: '100vh', paddingBottom: '400px', }} className='settings-container'>
             <Navbar />
             <div className='settings'>
                 <div className="container-title">

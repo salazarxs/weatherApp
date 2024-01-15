@@ -1,0 +1,27 @@
+@media screen and (max-width:1023px) {
+    .container-cities .container-cards-last5Cities {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-cities .container-cards-last5Cities form {
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .container-cities .container-cards-last5Cities form input {
+        width: 60%;
+    }
+
+    .container-cities .container-cards-last5Cities form button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-cities .container-cards-last5Cities form button:hover {
+        background-color: var(--ligth-dark-blue);
+        border-radius: 2vw;
+    }
+}

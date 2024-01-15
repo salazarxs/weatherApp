@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 // Styles
 import '../styles/Cities.css';
+import '../styles/mobile/Cities.css';
 
-// Iconst
+// Icons
 import { FaSearch } from 'react-icons/fa';
 
 // Components
