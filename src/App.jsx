@@ -5,15 +5,13 @@ import Settings from './components/Settings'
 import Cities from './components/Cities'
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' Component={Weather} />
-        <Route path='/cities' Component={Cities} />
-        <Route path='/settings' Component={Settings} />
+        <Route path='/' element={<Weather />} />
+        <Route path='/cities' element={<Cities />} />
+        <Route path='/settings' element={<Settings />} />
       </Routes>
-
     </BrowserRouter>
   )
 }
