@@ -9,11 +9,23 @@ const getCurrentPosition = () => {
                     resolve(data);
                 },
                 function (error) {
-                    reject("Error al obtener la ubicación: " + error.message);
+                    /**
+                     * latitud -33.45694 y longitud -70.64827
+                     */
+                    const latitude = -33.45694;
+                    const longitude = -70.64827;
+                    const data = { longitude, latitude };
+                    resolve(data);
+                    //reject("Error al obtener la ubicación: " + error.message);
                 }
             );
         } else {
-            reject("Geolocalización no es compatible en este navegador.");
+
+            const latitude = -33.45694;
+            const longitude = -70.64827;
+            const data = { longitude, latitude };
+            resolve(data);
+            //reject("Geolocalización no es compatible en este navegador.");
         }
     });
 };
